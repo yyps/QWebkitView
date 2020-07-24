@@ -1,0 +1,59 @@
+<html>
+    <head>
+      <meta charset="utf-8">
+      <title>Login page</title>
+    </head>
+    <body>
+        <p id="myt">我的数据 </p>
+        <p>id:
+        <input type="text" name="id"  />
+        </p>
+        <p>Name:
+        <input type="text" name="username" />
+        </p>
+        <p>Password:
+        <input type="text" name="userpwd"  />
+        </p>
+        <p>
+        <input type="button" value="Submit" onclick="call_to_Qt()" />
+        </p>
+    </body>
+
+    <script>
+     //   var obj = JSON.parse("{'name':'Bill Gates', 'age':62, 'city':'Seattle'}');
+     //   var obj = JSON.parse('{"name":"Bill Gates", "age":62, "city":"Seattle"}');
+     //   document.getElementById("myt").innerHTML = obj.name + ", " + obj.age;
+
+        // webkit方调用
+        function call_to_Qt()
+        {
+          var idArray = document.getElementsByName("id");
+          var nameArray = document.getElementsByName("username");
+          var pwdArray = document.getElementsByName("userpwd");
+
+          var json = {
+                   id : idArray[0].value,
+                   username : nameArray[0].value,
+                   passwd : pwdArray[0].value,
+                   test : "中文测试"
+            };
+          var str = JSON.stringify(json);
+          window.webCallback.onWebCall(str);
+        }
+
+        // Qt方调用
+        // 参数为json串
+        function call_from_Qt(cmd)
+        {
+            var json = JSON.parse(cmd);
+
+            var idArray = document.getElementsByName("id");
+            idArray[0].value = json.id;
+            var usernameArray = document.getElementsByName("username");
+            usernameArray[0].value = json.username;
+            pwdArray = document.getElementsByName("userpwd");
+            pwdArray[0].value = json.passwd;
+        }
+
+    </script>
+</html>
