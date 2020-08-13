@@ -1,0 +1,23 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "16226894",
+      "name": "资源 110",
+      "font_class": "ziyuan110",
+      "unicode": "e60e",
+      "unicode_decimal": 58894
+    },
+    {
+      "icon_id": "16226958",
+      "name": "资源 168",
+      "font_class": "ziyuan168",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    }
+  ]
+}
