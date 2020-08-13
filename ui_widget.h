@@ -36,13 +36,13 @@ public:
     QLineEdit *lineEdit;
     QPushButton *go;
     QProgressBar *progressBar;
-    QWidget *widget;
+    QWidget *layoutWidget1;
     QHBoxLayout *horizontalLayout_2;
     QSpacerItem *horizontalSpacer;
     QPushButton *commitButton;
     QPushButton *getInfoButton;
     QSpacerItem *horizontalSpacer_2;
-    QWidget *widget1;
+    QWidget *layoutWidget2;
     QHBoxLayout *horizontalLayout_3;
     QVBoxLayout *verticalLayout_3;
     QLabel *label;
@@ -57,10 +57,10 @@ public:
     {
         if (Widget->objectName().isEmpty())
             Widget->setObjectName(QStringLiteral("Widget"));
-        Widget->resize(724, 474);
+        Widget->resize(759, 470);
         webView = new QWebView(Widget);
         webView->setObjectName(QStringLiteral("webView"));
-        webView->setGeometry(QRect(10, 70, 361, 331));
+        webView->setGeometry(QRect(10, 70, 381, 331));
         webView->setUrl(QUrl(QStringLiteral("about:blank")));
         layoutWidget = new QWidget(Widget);
         layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
@@ -94,10 +94,10 @@ public:
 
         verticalLayout->addWidget(progressBar);
 
-        widget = new QWidget(Widget);
-        widget->setObjectName(QStringLiteral("widget"));
-        widget->setGeometry(QRect(440, 170, 255, 25));
-        horizontalLayout_2 = new QHBoxLayout(widget);
+        layoutWidget1 = new QWidget(Widget);
+        layoutWidget1->setObjectName(QStringLiteral("layoutWidget1"));
+        layoutWidget1->setGeometry(QRect(470, 260, 255, 25));
+        horizontalLayout_2 = new QHBoxLayout(layoutWidget1);
         horizontalLayout_2->setSpacing(6);
         horizontalLayout_2->setContentsMargins(11, 11, 11, 11);
         horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
@@ -106,12 +106,12 @@ public:
 
         horizontalLayout_2->addItem(horizontalSpacer);
 
-        commitButton = new QPushButton(widget);
+        commitButton = new QPushButton(layoutWidget1);
         commitButton->setObjectName(QStringLiteral("commitButton"));
 
         horizontalLayout_2->addWidget(commitButton);
 
-        getInfoButton = new QPushButton(widget);
+        getInfoButton = new QPushButton(layoutWidget1);
         getInfoButton->setObjectName(QStringLiteral("getInfoButton"));
 
         horizontalLayout_2->addWidget(getInfoButton);
@@ -120,10 +120,10 @@ public:
 
         horizontalLayout_2->addItem(horizontalSpacer_2);
 
-        widget1 = new QWidget(Widget);
-        widget1->setObjectName(QStringLiteral("widget1"));
-        widget1->setGeometry(QRect(370, 80, 331, 76));
-        horizontalLayout_3 = new QHBoxLayout(widget1);
+        layoutWidget2 = new QWidget(Widget);
+        layoutWidget2->setObjectName(QStringLiteral("layoutWidget2"));
+        layoutWidget2->setGeometry(QRect(400, 170, 331, 76));
+        horizontalLayout_3 = new QHBoxLayout(layoutWidget2);
         horizontalLayout_3->setSpacing(6);
         horizontalLayout_3->setContentsMargins(11, 11, 11, 11);
         horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
@@ -131,17 +131,17 @@ public:
         verticalLayout_3 = new QVBoxLayout();
         verticalLayout_3->setSpacing(6);
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
-        label = new QLabel(widget1);
+        label = new QLabel(layoutWidget2);
         label->setObjectName(QStringLiteral("label"));
 
         verticalLayout_3->addWidget(label);
 
-        label_2 = new QLabel(widget1);
+        label_2 = new QLabel(layoutWidget2);
         label_2->setObjectName(QStringLiteral("label_2"));
 
         verticalLayout_3->addWidget(label_2);
 
-        label_3 = new QLabel(widget1);
+        label_3 = new QLabel(layoutWidget2);
         label_3->setObjectName(QStringLiteral("label_3"));
 
         verticalLayout_3->addWidget(label_3);
@@ -152,17 +152,17 @@ public:
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        lineEdit_id = new QLineEdit(widget1);
+        lineEdit_id = new QLineEdit(layoutWidget2);
         lineEdit_id->setObjectName(QStringLiteral("lineEdit_id"));
 
         verticalLayout_2->addWidget(lineEdit_id);
 
-        lineEdit_2 = new QLineEdit(widget1);
+        lineEdit_2 = new QLineEdit(layoutWidget2);
         lineEdit_2->setObjectName(QStringLiteral("lineEdit_2"));
 
         verticalLayout_2->addWidget(lineEdit_2);
 
-        lineEdit_3 = new QLineEdit(widget1);
+        lineEdit_3 = new QLineEdit(layoutWidget2);
         lineEdit_3->setObjectName(QStringLiteral("lineEdit_3"));
 
         verticalLayout_2->addWidget(lineEdit_3);
@@ -171,11 +171,9 @@ public:
         horizontalLayout_3->addLayout(verticalLayout_2);
 
         layoutWidget->raise();
+        layoutWidget->raise();
         webView->raise();
         layoutWidget->raise();
-        label->raise();
-        label_2->raise();
-        label_3->raise();
 
         retranslateUi(Widget);
         QObject::connect(webView, SIGNAL(loadProgress(int)), progressBar, SLOT(setValue(int)));

@@ -16,18 +16,21 @@ public:
     ~Widget();
 
 public slots:
-    void onWebCall(QString json);
+    QString OnWebCall(QString json);
     void populateJavaScriptWindowObject();
+    void testSlot(bool);
 
 private slots:
     void on_go_clicked();
-
     void on_commitButton_clicked();
-
     void on_getInfoButton_clicked();
 
 private:
     Ui::Widget *ui;
+
+public:
+ signals:
+    void mySignal(bool);
 };
 
 #endif // WIDGET_H

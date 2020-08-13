@@ -8,7 +8,7 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets webkit webkitwidgets
 
-TARGET = WebViewDemo
+TARGET = WebViewDemo_t
 TEMPLATE = app
 
 
@@ -17,7 +17,8 @@ SOURCES += main.cpp\
 
 HEADERS  += widget.h
 
-FORMS    += widget.ui
+FORMS    += widget.ui \
+    webui.ui
 
 RESOURCES += \
     html.qrc
